@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инклюзив Дэнс Сочи. Море возможностей</title>
+    <meta name="description" content="Межрегиональный инклюзивный танцевальный фестиваль в Сочи. Обучение, соревнования, отдых.">
+    
+    <!-- Подключение Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Подключение шрифтов (Inter для отличной читаемости) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Иконки FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Настройка конфигурации Tailwind для новой палитры -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Фирменная палитра Inclusive Dance
+                        brand: {
+                            blue: '#00a1e3',       // Основной голубой (Море)
+                            blueDark: '#007bb0',   // Темно-голубой для ховера/текста
+                            pink: '#e20d7e',       // Акцентный розовый (Энергия)
+                            pinkDark: '#b00a62',   // Темно-розовый для ховера
+                            dark: '#1e293b',       // Темный для текста (Slate-800)
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Дополнительные стили для фокуса (доступность) */
+        *:focus-visible {
+            outline: 3px solid #e20d7e;
+            outline-offset: 2px;
+        }
+        
+        /* Градиент для текста */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #00a1e3, #e20d7e);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800 font-sans leading-relaxed text-lg">
+
+    <!-- Ссылка для скринридеров -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:p-4 focus:shadow-lg focus:text-brand-pink font-bold">
+        Перейти к основному контенту
+    </a>
+
+    <!-- 1. Навигационная панель -->
+    <nav class="fixed w-full z-50 bg-white shadow-md" aria-label="Главное меню">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-brand-blueDark flex items-center gap-2">
+                <i class="fa-solid fa-water text-brand-blue" aria-hidden="true"></i>
+                <span>Инклюзив Дэнс Сочи</span>
+            </a>
+            
+            <!-- Десктоп меню -->
+            <ul class="hidden md:flex space-x-8 font-semibold text-gray-700">
+                <li><a href="#about" class="hover:text-brand-pink transition-colors">О фестивале</a></li>
+                <li><a href="#program" class="hover:text-brand-pink transition-colors">Программа</a></li>
+                <li><a href="#applications" class="hover:text-brand-pink transition-colors">Заявки</a></li>
+                <li><a href="#finance" class="hover:text-brand-pink transition-colors">Условия</a></li>
+                <li><a href="#contacts" class="hover:text-brand-pink transition-colors">Контакты</a></li>
+            </ul>
+
+            <!-- Мобильное меню (кнопка) -->
+            <button id="mobile-menu-btn" class="md:hidden text-brand-blue text-3xl focus:outline-none" aria-label="Открыть меню">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Мобильное меню (выпадающее) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <ul class="flex flex-col p-4 space-y-4 font-semibold text-gray-700">
+                <li><a href="#about" class="block hover:text-brand-pink">О фестивале</a></li>
+                <li><a href="#program" class="block hover:text-brand-pink">Программа</a></li>
+                <li><a href="#applications" class="block hover:text-brand-pink">Подать заявку</a></li>
+                <li><a href="#finance" class="block hover:text-brand-pink">Финансы</a></li>
+                <li><a href="#contacts" class="block hover:text-brand-pink">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- 2. Hero Section -->
+        <section class="relative h-screen min-h-[600px] flex items-center justify-center bg-brand-blueDark text-white">
+            <!-- Фоновое изображение с наложением фирменного цвета -->
+            <div class="absolute inset-0 z-0 bg-brand-blue">
+                <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                     alt="Силуэты людей на фоне морского заката" 
+                     class="w-full h-full object-cover opacity-30 mix-blend-multiply">
+            </div>
+
+            <div class="relative z-10 container mx-auto px-4 text-center md:text-left">
+                <span class="inline-block py-1 px-3 rounded-full bg-brand-pink text-white font-bold text-sm mb-4 uppercase tracking-wider shadow-lg">
+                    Южный Федеральный Округ
+                </span>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">
+                    Инклюзив Дэнс Сочи. <br>
+                    <span class="text-white drop-shadow-md">Море возможностей</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl font-medium text-blue-50">
+                    Межрегиональный инклюзивный танцевальный фестиваль. Окунитесь в атмосферу творчества и дружбы на берегу Черного моря.
+                </p>
+                
+                <div class="flex flex-col md:flex-row gap-4 items-center md:items-start text-lg font-semibold mb-8">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-regular fa-calendar text-brand-pink"></i>
+                        <span>15 – 22 Мая 2026</span>
+                    </div>
+                    <div class="hidden md:block w-px h-6 bg-blue-300"></div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot text-brand-pink"></i>
+                        <span>Сочи, Отель «Бархатные Сезоны»</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#applications" class="bg-brand-pink hover:bg-brand-pinkDark text-white font-bold py-4 px-8 rounded-lg shadow-lg transition transform hover:-translate-y-1 text-center">
+                        Перейти к регистрации
+                    </a>
+                    <a href="#" class="border-2 border-white hover:bg-white hover:text-brand-blue font-bold py-4 px-8 rounded-lg transition text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-file-pdf"></i> Скачать Положение
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. О фестивале -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-bold text-brand-blue mb-6">Глубина вашего таланта</h2>
+                        <p class="mb-6 text-gray-700">
+                            Фестиваль «Море возможностей» — это не просто конкурс. Это профессиональная платформа для развития инклюзивных коллективов. Мы создали условия, где вы сможете совместить интенсивную танцевальную практику с оздоровительным отдыхом.
+                        </p>
+                        <p class="mb-6 text-gray-700">
+                            Как море принимает любые реки, так и наш фестиваль открыт для всех, кто готов творить, учиться и преодолевать границы.
+                        </p>
+
+                        <!-- ВАЖНОЕ ПРЕДУПРЕЖДЕНИЕ -->
+                        <div role="alert" class="border-l-4 border-brand-pink bg-pink-50 p-6 rounded-r-lg mt-8 shadow-sm">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-exclamation text-brand-pink text-2xl mt-1" aria-hidden="true"></i>
+                                <div>
+                                    <h3 class="font-bold text-gray-900 text-xl mb-1">Внимание участникам!</h3>
+                                    <p class="text-gray-800 font-medium">
+                                        Конкурсная программа фестиваля рассчитана <strong>только на Дуэты и Коллективы</strong> (малые и большие формы). Сольные номера и танцоры-одиночки в данном фестивале участие не принимают.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Группа танцоров в белых костюмах исполняет современную хореографию." 
+                             class="rounded-2xl shadow-2xl w-full h-auto object-cover aspect-4/3 ring-4 ring-brand-blue/10">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Программа (Timeline) -->
+        <section id="program" class="py-20 bg-blue-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-5xl font-bold text-center text-brand-blueDark mb-16">Программа фестиваля</h2>
+                
+                <div class="max-w-4xl mx-auto space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-brand-blue before:to-transparent">
+                    
+                    <!-- День 1 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-brand-blue shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 text-white font-bold z-10">
+                            1
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-md border-l-4 border-brand-blue">
+                            <time class="block mb-2 font-bold text-xl text-brand-pink">15 мая</time>
+                            <h3 class="font-bold text-lg mb-2">Заезд и Знакомство</h3>
+                            <p class="text-gray-600">Заезд коллективов. Круглый стол «На одной волне»: знакомство, нетворкинг и обмен опытом.</p>
+                        </div>
+                    </div>
+
+                    <!-- День 2-5 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-brand-pink shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 text-white font-bold z-10">
+                            2-5
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-md border-l-4 border-brand-pink">
+                            <time class="block mb-2 font-bold text-xl text-brand-pink">16 – 19 мая</time>
+                            <h3 class="font-bold text-lg mb-2">Школа инклюзивного танца</h3>
+                            <p class="text-gray-600">Интенсив для танцоров, волонтеров и хореографов. Мастер-классы от ведущих педагогов.</p>
+                        </div>
+                    </div>
+
+                    <!-- День 6 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-brand-blue shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 text-white font-bold z-10">
+                            6
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-md border-l-4 border-brand-blue">
+                            <time class="block mb-2 font-bold text-xl text-brand-pink">20 мая</time>
+                            <h3 class="font-bold text-lg mb-2">Танцевальная импровизация</h3>
+                            <p class="text-gray-600">Парные соревнования (баттлы) «здесь и сейчас».</p>
+                        </div>
+                    </div>
+
+                    <!-- День 7 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-brand-blue shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 text-white font-bold z-10">
+                            7
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-md border-l-4 border-brand-blue">
+                            <time class="block mb-2 font-bold text-xl text-brand-pink">21 мая</time>
+                            <h3 class="font-bold text-lg mb-2">Конкурс хореографии</h3>
+                            <p class="text-gray-600">Главный конкурс для дуэтов и коллективов. Оценка жюри.</p>
+                        </div>
+                    </div>
+                     <!-- День 8 -->
+                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-gray-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 text-white font-bold z-10">
+                            8
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-md border-l-4 border-gray-400">
+                            <time class="block mb-2 font-bold text-xl text-brand-pink">22 мая</time>
+                            <h3 class="font-bold text-lg mb-2">Выезд</h3>
+                            <p class="text-gray-600">Отъезд участников фестиваля.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Заявки (Карточки) -->
+        <section id="applications" class="py-20 bg-white text-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4 text-brand-blueDark">Подать заявку</h2>
+                    <p class="text-xl text-gray-600">Внимание: на каждое мероприятие подается отдельная заявка.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Карточка 1 -->
+                    <article class="bg-slate-50 rounded-xl p-6 shadow-lg flex flex-col h-full border-t-8 border-gray-400">
+                        <div class="mb-4 text-gray-500 text-4xl"><i class="fa-solid fa-handshake"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Круглый стол</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Для руководителей. Обсуждение проблем и обмен методиками.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-200">
+                            <span class="block text-center font-bold text-brand-blue">Вход свободный</span>
+                        </div>
+                    </article>
+
+                    <!-- Карточка 2 -->
+                    <article class="bg-white rounded-xl p-6 shadow-xl flex flex-col h-full border-t-8 border-brand-pink transform transition hover:-translate-y-2">
+                        <div class="mb-4 text-brand-pink text-4xl"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Школа танца</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Интенсив-погружение для танцоров и хореографов.</p>
+                        <button class="mt-auto w-full bg-brand-pink hover:bg-brand-pinkDark text-white font-bold py-3 px-4 rounded transition" aria-label="Подать заявку на Школу инклюзивного танца">
+                            Подать заявку
+                        </button>
+                    </article>
+
+                    <!-- Карточка 3 -->
+                    <article class="bg-white rounded-xl p-6 shadow-xl flex flex-col h-full border-t-8 border-brand-pink transform transition hover:-translate-y-2">
+                        <div class="mb-4 text-brand-pink text-4xl"><i class="fa-solid fa-bolt"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Импровизация</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Парные соревнования. Баттлы «здесь и сейчас».</p>
+                        <button class="mt-auto w-full bg-brand-pink hover:bg-brand-pinkDark text-white font-bold py-3 px-4 rounded transition" aria-label="Подать заявку на соревнования по импровизации">
+                            Подать заявку
+                        </button>
+                    </article>
+
+                    <!-- Карточка 4 -->
+                    <article class="bg-white rounded-xl p-6 shadow-xl flex flex-col h-full border-t-8 border-brand-blue transform transition hover:-translate-y-2 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-brand-blue text-white text-xs px-2 py-1 font-bold rounded-bl">ГЛАВНОЕ</div>
+                        <div class="mb-4 text-brand-blue text-4xl"><i class="fa-solid fa-trophy"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Конкурс хореографии</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">Для дуэтов и коллективов. Постановочные номера.</p>
+                        <button class="mt-auto w-full bg-brand-blue hover:bg-brand-blueDark text-white font-bold py-3 px-4 rounded transition" aria-label="Подать заявку на конкурс коллективов">
+                            Подать заявку
+                        </button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Проживание -->
+        <section id="accommodation" class="py-20 bg-blue-50">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Вид на современный отель с удобными дорожками и доступной средой" 
+                             class="rounded-2xl shadow-xl w-full h-auto object-cover">
+                        <div class="mt-4 flex gap-4 text-brand-blueDark text-sm font-bold">
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-wheelchair"></i> Пандусы</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-elevator"></i> Лифты</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-utensils"></i> 3-х раз. питание</span>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <h2 class="text-3xl md:text-5xl font-bold text-brand-blueDark mb-6">Ваша гавань: Отель «Бархатные Сезоны»</h2>
+                        <p class="mb-4 text-gray-700">
+                            <strong>Условие участия:</strong> Все иногородние участники проживают в официальном отеле. Это гарантирует безопасность, доступную среду (номера для людей на колясках) и удобную логистику.
+                        </p>
+                        <p class="mb-4 text-gray-700">
+                            Все зоны активности — залы, сцена, столовая — находятся в пешей доступности и полностью адаптированы (без порогов, наличие спец. туалетов).
+                        </p>
+                        <div class="bg-white p-4 rounded-lg border border-blue-200 mt-6 shadow-sm">
+                            <h4 class="font-bold text-brand-blue mb-2"><i class="fa-solid fa-bus"></i> Трансфер</h4>
+                            <p class="text-sm text-gray-600">Организаторы оказывают содействие в заказе транспорта от ж/д вокзала или аэропорта до отеля (по предварительной заявке).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Финансы -->
+        <section id="finance" class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <h2 class="text-3xl md:text-5xl font-bold text-center text-brand-blue mb-12">Финансовые условия</h2>
+                
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100">
+                    <div class="p-6 md:p-8">
+                        <p class="mb-6 text-gray-600 italic">Иногородние коллективы оплачивают проезд, проживание и питание за счет собственных средств или командирующей стороны.</p>
+                        
+                        <!-- Таблица Проживания -->
+                        <h3 class="text-xl font-bold text-brand-blueDark mb-4">1. Пакет проживания (за чел/сутки)</h3>
+                        <div class="overflow-x-auto mb-8">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-brand-blue text-white">
+                                        <th class="p-4 border-b border-blue-400">Тип размещения</th>
+                                        <th class="p-4 border-b border-blue-400">До 01.04.2026</th>
+                                        <th class="p-4 border-b border-blue-400">До 10.04.2026</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd:bg-blue-50">
+                                        <td class="p-4 border-b border-gray-100">1-местный номер</td>
+                                        <td class="p-4 border-b border-gray-100 font-bold text-brand-pink">4 500 ₽</td>
+                                        <td class="p-4 border-b border-gray-100 font-bold text-brand-pink">5 000 ₽</td>
+                                    </tr>
+                                    <tr class="odd:bg-blue-50">
+                                        <td class="p-4 border-b border-gray-100">2/3-местный номер</td>
+                                        <td class="p-4 border-b border-gray-100 font-bold text-brand-pink">3 200 ₽</td>
+                                        <td class="p-4 border-b border-gray-100 font-bold text-brand-pink">3 700 ₽</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Оргвзносы -->
+                        <h3 class="text-xl font-bold text-brand-blueDark mb-4">2. Организационный взнос (Конкурс)</h3>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="bg-slate-50 p-4 rounded border border-gray-200 text-center">
+                                <span class="block text-gray-500 text-sm mb-1">Дуэт</span>
+                                <span class="block text-xl font-bold text-brand-blue">1 500 ₽ / чел</span>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded border border-gray-200 text-center">
+                                <span class="block text-gray-500 text-sm mb-1">Малый коллектив</span>
+                                <span class="block text-xl font-bold text-brand-blue">1 000 ₽ / чел</span>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded border border-gray-200 text-center">
+                                <span class="block text-gray-500 text-sm mb-1">Средний коллектив</span>
+                                <span class="block text-xl font-bold text-brand-blue">800 ₽ / чел</span>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded border border-gray-200 text-center">
+                                <span class="block text-gray-500 text-sm mb-1">Большой коллектив</span>
+                                <span class="block text-xl font-bold text-brand-blue">600 ₽ / чел</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Документы -->
+        <section id="documents" class="py-20 bg-blue-50">
+            <div class="container mx-auto px-4 max-w-4xl text-center">
+                <h2 class="text-3xl font-bold text-brand-blueDark mb-10">Документация фестиваля</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <a href="#" class="flex flex-col items-center p-6 bg-white border-2 border-blue-100 rounded-xl hover:border-brand-pink hover:shadow-lg transition group">
+                        <i class="fa-regular fa-file-pdf text-4xl text-brand-blue group-hover:text-brand-pink mb-4"></i>
+                        <span class="font-bold underline decoration-brand-pink underline-offset-4">Положение о фестивале</span>
+                        <span class="text-sm text-gray-500 mt-2">PDF, 2.4 MB</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center p-6 bg-white border-2 border-blue-100 rounded-xl hover:border-brand-pink hover:shadow-lg transition group">
+                        <i class="fa-regular fa-file-pdf text-4xl text-brand-blue group-hover:text-brand-pink mb-4"></i>
+                        <span class="font-bold underline decoration-brand-pink underline-offset-4">Правила Конкурса</span>
+                        <span class="text-sm text-gray-500 mt-2">PDF, 1.1 MB</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center p-6 bg-white border-2 border-blue-100 rounded-xl hover:border-brand-pink hover:shadow-lg transition group">
+                        <i class="fa-regular fa-file-pdf text-4xl text-brand-blue group-hover:text-brand-pink mb-4"></i>
+                        <span class="font-bold underline decoration-brand-pink underline-offset-4">Регламент Импровизации</span>
+                        <span class="text-sm text-gray-500 mt-2">PDF, 0.9 MB</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Галерея -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-5xl font-bold text-center text-brand-blue mb-12">Мгновения «Море возможностей»</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="grid gap-4">
+                        <img class="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1535525153412-5a42439a210d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Танцующая пара на сцене в лучах софитов">
+                        <img class="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Группа танцоров в ярких костюмах">
+                    </div>
+                    <div class="grid gap-4">
+                        <img class="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1545959828-090c8a6f6df6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Танцовщица на коляске делает поворот">
+                        <img class="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Церемония награждения">
+                    </div>
+                    <div class="grid gap-4">
+                        <img class="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1504609773096-104ff10587a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Портрет улыбающегося ребенка">
+                        <img class="h-auto max-w-full rounded-lg object-cover" src="https://images.unsplash.com/photo-1499364615650-ec387c17b9b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Общее фото участников">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 10. Футер -->
+    <footer id="contacts" class="bg-gray-900 text-white py-16 border-t-4 border-brand-blue">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-brand-blue">Инклюзив Дэнс Сочи</h3>
+                    <p class="mb-4 text-gray-300">Танец, объединяющий миры. Мы верим, что сцена доступна каждому.</p>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" aria-label="Мы ВКонтакте" class="bg-white/10 hover:bg-brand-blue w-12 h-12 flex items-center justify-center rounded-full transition text-xl"><i class="fa-brands fa-vk"></i></a>
+                        <a href="#" aria-label="Мы в Telegram" class="bg-white/10 hover:bg-brand-blue w-12 h-12 flex items-center justify-center rounded-full transition text-xl"><i class="fa-brands fa-telegram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-brand-pink">Контакты Оргкомитета</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone mt-1 text-brand-blue"></i>
+                            <span>
+                                <span class="block text-sm text-gray-400">Горячая линия</span>
+                                <a href="tel:+79000000000" class="hover:text-brand-pink font-bold text-lg transition">+7 (900) 000-00-00</a>
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-brand-blue"></i>
+                            <span>
+                                <span class="block text-sm text-gray-400">Email для заявок</span>
+                                <a href="mailto:hello@rhythm-heart.ru" class="hover:text-brand-pink transition">hello@rhythm-heart.ru</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-brand-pink">Адрес</h3>
+                    <p class="flex items-start gap-3 mb-6">
+                        <i class="fa-solid fa-map-pin mt-1 text-brand-blue"></i>
+                        <span class="text-gray-300">г. Сочи, Адлерский район,<br>ул. Фигурная, 45 (Отель «Бархатные сезоны»)</span>
+                    </p>
+                    <p class="text-sm text-gray-500">© 2026 Фестиваль «Инклюзив Дэнс».<br>Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипт для мобильного меню -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
