@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Инклюзив Дэнс SOCHI. Море возможностей</title>
+    <title>Инклюзив Дэнс Сочи. Море возможностей</title>
     <meta name="description" content="Межрегиональный инклюзивный танцевальный фестиваль в Сочи. Обучение, соревнования, отдых.">
     
     <!-- Подключение Tailwind CSS -->
@@ -162,7 +162,7 @@
                 </h1>
                 
                 <p class="text-xl md:text-2xl mb-10 max-w-2xl font-medium text-gray-100 leading-normal">
-                    Инклюзив Дэнс SOCHI. Погрузитесь в атмосферу творчества и дружбы на берегу Черного моря.
+                    Инклюзив Дэнс Сочи. Погрузитесь в атмосферу творчества и дружбы на берегу Черного моря.
                 </p>
                 
                 <div class="flex flex-col md:flex-row gap-8 items-center md:items-start text-lg font-medium text-white/90 mb-12">
@@ -173,6 +173,29 @@
                     <div class="flex items-center gap-3 bg-white/10 px-5 py-3 rounded-2xl backdrop-blur-sm border border-white/10">
                         <i class="fa-solid fa-location-dot text-brand-pink text-xl"></i>
                         <span>Сочи, Отель «Бархатные Сезоны»</span>
+                    </div>
+                </div>
+
+                <!-- Счетчик времени до фестиваля -->
+                <div class="countdown-timer bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 mb-12 max-w-2xl mx-auto lg:mx-0">
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">До начала фестиваля осталось:</h3>
+                    <div class="grid grid-cols-4 gap-4 text-center">
+                        <div class="bg-white/20 rounded-2xl p-4 backdrop-blur-sm">
+                            <div class="text-3xl font-extrabold text-white" id="days">156</div>
+                            <div class="text-sm text-white/80 uppercase tracking-wider">дней</div>
+                        </div>
+                        <div class="bg-white/20 rounded-2xl p-4 backdrop-blur-sm">
+                            <div class="text-3xl font-extrabold text-white" id="hours">12</div>
+                            <div class="text-sm text-white/80 uppercase tracking-wider">часов</div>
+                        </div>
+                        <div class="bg-white/20 rounded-2xl p-4 backdrop-blur-sm">
+                            <div class="text-3xl font-extrabold text-white" id="minutes">34</div>
+                            <div class="text-sm text-white/80 uppercase tracking-wider">минут</div>
+                        </div>
+                        <div class="bg-white/20 rounded-2xl p-4 backdrop-blur-sm">
+                            <div class="text-3xl font-extrabold text-white" id="seconds">56</div>
+                            <div class="text-sm text-white/80 uppercase tracking-wider">секунд</div>
+                        </div>
                     </div>
                 </div>
 
@@ -299,15 +322,17 @@
 
                         <!-- Действие -->
                         <div class="shrink-0 lg:w-48">
-                            <button class="w-full bg-brand-dark text-white hover:bg-brand-pink font-semibold py-4 px-6 rounded-2xl transition-all shadow-lg shadow-brand-dark/20 hover:shadow-brand-pink/40 flex items-center justify-center gap-2 group-hover:scale-105" aria-label="Подать заявку на Школу">
-                                <span>Подать заявку</span>
-                                <i class="fa-solid fa-arrow-right text-xs opacity-50"></i>
+                            <button onclick="openModal('schoolModal')" class="w-full bg-brand-pink hover:bg-brand-pinkDark text-white font-semibold py-4 px-6 rounded-2xl transition-all shadow-lg hover:shadow-brand-pink/40 text-center" aria-label="Подать заявку на Школу">
+                                Подать заявку
                             </button>
                         </div>
                     </article>
 
                     <!-- 3. Импровизация (20 мая) -->
                     <article class="group bg-white p-6 md:p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col lg:flex-row gap-8 lg:items-center relative overflow-hidden">
+                        <!-- Индикатор -->
+                        <div class="absolute left-0 top-0 bottom-0 w-2 bg-brand-blue/50 group-hover:bg-brand-blue transition-colors"></div>
+                        
                         <!-- Дата -->
                         <div class="shrink-0 flex lg:flex-col items-center gap-3 lg:gap-1 lg:w-32 lg:text-center border-b lg:border-b-0 lg:border-r border-slate-100 pb-4 lg:pb-0 lg:pr-6">
                             <span class="text-4xl font-extrabold text-brand-blue tracking-tighter">20</span>
@@ -329,41 +354,40 @@
 
                         <!-- Действие -->
                         <div class="shrink-0 lg:w-48">
-                            <button class="w-full bg-white border-2 border-slate-200 text-brand-dark hover:border-brand-blue hover:text-brand-blue font-bold py-3.5 px-6 rounded-2xl transition-all flex items-center justify-center gap-2" aria-label="Подать заявку на Баттлы">
-                                <span>Регистрация</span>
+                            <button onclick="openModal('battlesModal')" class="w-full bg-brand-blue hover:bg-brand-blueDark text-white font-semibold py-4 px-6 rounded-2xl transition-all shadow-lg hover:shadow-brand-blue/40 text-center" aria-label="Подать заявку на Баттлы">
+                                Подать заявку
                             </button>
                         </div>
                     </article>
 
                     <!-- 4. Конкурс (Главное событие - 21 мая) -->
-                    <article class="group relative bg-gradient-to-br from-brand-blue to-brand-blueDark p-6 md:p-8 rounded-[2.5rem] shadow-xl shadow-brand-blue/30 flex flex-col lg:flex-row gap-8 lg:items-center text-white overflow-hidden transform transition-transform hover:scale-[1.01]">
-                        <!-- Декор фона -->
-                        <div class="absolute -right-10 -top-10 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
-
+                    <article class="group bg-white p-6 md:p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col lg:flex-row gap-8 lg:items-center relative overflow-hidden">
+                        <!-- Индикатор -->
+                        <div class="absolute left-0 top-0 bottom-0 w-2 bg-brand-pink/50 group-hover:bg-brand-pink transition-colors"></div>
+                        
                         <!-- Дата -->
-                        <div class="relative shrink-0 flex lg:flex-col items-center gap-3 lg:gap-1 lg:w-32 lg:text-center border-b lg:border-b-0 lg:border-r border-white/20 pb-4 lg:pb-0 lg:pr-6">
-                            <span class="text-4xl font-extrabold text-white tracking-tighter">21</span>
-                            <span class="text-blue-100 font-bold uppercase text-xs tracking-widest">Мая</span>
+                        <div class="shrink-0 flex lg:flex-col items-center gap-3 lg:gap-1 lg:w-32 lg:text-center border-b lg:border-b-0 lg:border-r border-slate-100 pb-4 lg:pb-0 lg:pr-6">
+                            <span class="text-4xl font-extrabold text-brand-pink tracking-tighter">21</span>
+                            <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Мая</span>
                         </div>
                         
                         <!-- Контент -->
-                        <div class="relative flex-grow">
+                        <div class="flex-grow">
                             <div class="flex items-center gap-3 mb-2">
-                                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white text-sm backdrop-blur-md">
+                                <div class="w-8 h-8 rounded-full bg-brand-pink/10 flex items-center justify-center text-brand-pink text-sm">
                                     <i class="fa-solid fa-trophy"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold">Большой Конкурс</h3>
+                                <h3 class="text-2xl font-bold text-brand-dark">Большой Конкурс</h3>
                             </div>
-                            <p class="text-blue-50 leading-relaxed mb-4 lg:mb-0">
+                            <p class="text-slate-600 leading-relaxed mb-4 lg:mb-0">
                                 Главное событие фестиваля. Конкурс хореографии для дуэтов и коллективов. Оценка жюри и Гала-концерт.
                             </p>
                         </div>
 
                         <!-- Действие -->
-                        <div class="relative shrink-0 lg:w-48">
-                            <button class="w-full bg-white text-brand-blue hover:bg-blue-50 font-bold py-4 px-6 rounded-2xl transition-colors shadow-lg flex items-center justify-center gap-2" aria-label="Подать заявку на Конкурс">
-                                <span>Подать заявку</span>
-                                <i class="fa-solid fa-pen-nib"></i>
+                        <div class="shrink-0 lg:w-48">
+                            <button onclick="openModal('contestModal')" class="w-full bg-brand-pink hover:bg-brand-pinkDark text-white font-semibold py-4 px-6 rounded-2xl transition-all shadow-lg hover:shadow-brand-pink/40 text-center" aria-label="Подать заявку на Конкурс">
+                                Подать заявку
                             </button>
                         </div>
                     </article>
@@ -635,6 +659,279 @@
         </div>
     </footer>
 
+    <!-- Модальные окна для заявок -->
+    
+    <!-- Модальное окно для Школы танца -->
+    <div id="schoolModal" class="modal fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 relative">
+            <button onclick="closeModal('schoolModal')" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600 transition">
+                <i class="fa-solid fa-times"></i>
+            </button>
+            
+            <div class="mb-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-pink/10 flex items-center justify-center">
+                        <i class="fa-solid fa-graduation-cap text-brand-pink text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-dark">Заявка на Школу инклюзивного танца</h3>
+                </div>
+                <p class="text-gray-600">16-19 мая 2026 • 4 дня интенсивного обучения</p>
+            </div>
+
+            <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Имя участника *</label>
+                        <input type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Фамилия *</label>
+                        <input type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                        <input type="email" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Телефон *</label>
+                        <input type="tel" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Роль в танце *</label>
+                    <select required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                        <option value="">Выберите роль</option>
+                        <option value="dancer">Танцор</option>
+                        <option value="volunteer">Волонтер</option>
+                        <option value="choreographer">Хореограф</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Опыт в инклюзивном танце</label>
+                    <textarea rows="3" placeholder="Расскажите о вашем опыте..." class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue"></textarea>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Особые потребности в доступности</label>
+                    <textarea rows="2" placeholder="Укажите, если нужны специальные условия..." class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue"></textarea>
+                </div>
+                
+                <div class="bg-blue-50 rounded-2xl p-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-info-circle text-brand-blue mt-1"></i>
+                        <div class="text-sm">
+                            <p class="font-semibold text-brand-blueDark mb-1">Стоимость участия в Школе</p>
+                            <p class="text-gray-600">Обучение в рамках школы бесплатное. Проживание и питание оплачиваются отдельно согласно тарифам отеля.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="w-full bg-brand-pink hover:bg-brand-pinkDark text-white font-semibold py-4 px-6 rounded-2xl transition-all transform hover:scale-[1.02]">
+                    Подать заявку на Школу
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для Баттлов -->
+    <div id="battlesModal" class="modal fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 relative">
+            <button onclick="closeModal('battlesModal')" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600 transition">
+                <i class="fa-solid fa-times"></i>
+            </button>
+            
+            <div class="mb-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center">
+                        <i class="fa-solid fa-bolt text-brand-blue text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-dark">Заявка на Танцевальную импровизацию</h3>
+                </div>
+                <p class="text-gray-600">20 мая 2026 • Парные соревнования (баттлы)</p>
+            </div>
+
+            <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Имя первого участника *</label>
+                        <input type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Имя второго участника *</label>
+                        <input type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Название дуэта/коллектива *</label>
+                    <input type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Контактное лицо *</label>
+                        <input type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Телефон *</label>
+                        <input type="tel" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                    <input type="email" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Город *</label>
+                    <input type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                </div>
+                
+                <div class="bg-orange-50 rounded-2xl p-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-exclamation-triangle text-orange-500 mt-1"></i>
+                        <div class="text-sm">
+                            <p class="font-semibold text-orange-700 mb-1">Участие только для дуэтов!</p>
+                            <p class="text-gray-600">Баттлы проводятся исключительно в парном формате. Сольные номера не принимаются.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="w-full bg-brand-blue hover:bg-brand-blueDark text-white font-semibold py-4 px-6 rounded-2xl transition-all transform hover:scale-[1.02]">
+                    Подать заявку на Баттлы
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для Конкурса -->
+    <div id="contestModal" class="modal fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 relative">
+            <button onclick="closeModal('contestModal')" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600 transition">
+                <i class="fa-solid fa-times"></i>
+            </button>
+            
+            <div class="mb-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-r from-brand-blue to-brand-blueDark flex items-center justify-center">
+                        <i class="fa-solid fa-trophy text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-dark">Заявка на Большой Конкурс</h3>
+                </div>
+                <p class="text-gray-600">21 мая 2026 • Главное событие фестиваля</p>
+            </div>
+
+            <form class="space-y-6">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Тип номера *</label>
+                    <select required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                        <option value="">Выберите тип номера</option>
+                        <option value="duet">Дуэт</option>
+                        <option value="small">Малый коллектив (3-7 человек)</option>
+                        <option value="medium">Средний коллектив (8-15 человек)</option>
+                        <option value="large">Большой коллектив (16+ человек)</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Название коллектива/номера *</label>
+                    <input type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Руководитель/контактное лицо *</label>
+                    <input type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Телефон *</label>
+                        <input type="tel" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                        <input type="email" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Город *</label>
+                    <input type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Количество участников *</label>
+                    <input type="number" required min="2" class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Хореограф/постановщик</label>
+                    <input type="text" class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Название номера *</label>
+                    <input type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Стиль танца *</label>
+                    <select required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                        <option value="">Выберите стиль</option>
+                        <option value="contemporary">Современный танец</option>
+                        <option value="classic">Классический танец</option>
+                        <option value="street">Уличные стили</option>
+                        <option value="folk">Народный танец</option>
+                        <option value="jazz">Джаз</option>
+                        <option value="ballet">Балет</option>
+                        <option value="mixed">Смешанный стиль</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Продолжительность номера *</label>
+                    <select required class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue">
+                        <option value="">Выберите продолжительность</option>
+                        <option value="2-3">2-3 минуты</option>
+                        <option value="3-4">3-4 минуты</option>
+                        <option value="4-5">4-5 минут</option>
+                        <option value="5-6">5-6 минут</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Описание номера</label>
+                    <textarea rows="3" placeholder="Краткое описание концепции, идеи номера..." class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue"></textarea>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Особые требования к технике</label>
+                    <textarea rows="2" placeholder="Технические требования, реквизит и т.д." class="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue"></textarea>
+                </div>
+                
+                <div class="bg-green-50 rounded-2xl p-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-info-circle text-green-600 mt-1"></i>
+                        <div class="text-sm">
+                            <p class="font-semibold text-green-700 mb-1">Организационный взнос</p>
+                            <p class="text-gray-600">Стоимость зависит от типа коллектива. Детали в разделе "Финансовые условия".</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="w-full bg-gradient-to-r from-brand-blue to-brand-blueDark hover:from-brand-blueDark hover:to-brand-blue text-white font-bold py-4 px-6 rounded-2xl transition-all transform hover:scale-[1.02] text-lg">
+                    Подать заявку на Конкурс
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- Скрипт для мобильного меню -->
     <script>
         const btn = document.getElementById('mobile-menu-btn');
@@ -648,6 +945,60 @@
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
             });
+        });
+
+        // Счетчик времени до фестиваля
+        function updateCountdown() {
+            const festivalDate = new Date('2026-05-15T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = festivalDate - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            }
+        }
+
+        // Обновляем каждую секунду
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Первоначальный запуск
+
+        // Модальные окна для заявок
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Закрытие модального окна при клике вне его
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal(this.id);
+                }
+            });
+        });
+
+        // Закрытие по Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    if (!modal.classList.contains('hidden')) {
+                        closeModal(modal.id);
+                    }
+                });
+            }
         });
     </script>
 </body>
